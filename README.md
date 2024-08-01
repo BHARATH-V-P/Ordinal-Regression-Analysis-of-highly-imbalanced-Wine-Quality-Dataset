@@ -43,13 +43,13 @@ Creating a tuned prediction model to determine the quality of wine based on the 
    Predictions: Found in results/predictions.csv
 
 ## Features
-   -Data Preprocessing: Handles missing values, normalization.
-   -Insightful Visualizations to better understand the imabalanced dataset.
-   -Get statistical overview of the features involved
-   -Evaluate the effecct of different transformation techniques given that all independent variables were continuous numerical.
-   -Model Training: Utilizes Logistic Regression, Random Forest Classification, XGBoost , and LGB.
-   -Create custom metrics to aid better results from Bayesian Optimization
-   -Model Evaluation based on the quality of fitting during data trianing
+   - Data Preprocessing: Handles missing values, normalization.
+   - Insightful Visualizations to better understand the imabalanced dataset.
+   - Get statistical overview of the features involved
+   - Evaluate the effecct of different transformation techniques given that all independent variables were continuous numerical.
+   - Model Training: Utilizes Logistic Regression, Random Forest Classification, XGBoost , and LGB.
+   - Create custom metrics to aid better results from Bayesian Optimization
+   - Model Evaluation based on the quality of fitting during data trianing
 
 ## Results
 
