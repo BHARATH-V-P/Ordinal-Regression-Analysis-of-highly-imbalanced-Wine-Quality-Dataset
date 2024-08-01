@@ -3,12 +3,13 @@
 This project involves building a classification model to predict the quality of wine based on various chemical properties. The aim is to analyze feature relevance for specific classes given the highly imbalanced nature of the dataset, optimize models to help improve predictability, and visualize specific patterns from the dataset. The problem at hand is treated as an Ordinal Regression problem where the main objective is to improve the Cohen Kappa Score.
 
 ## Table of Contents
--[Introduction](#introduction)
--[Installation](#installation)
--[Usage](#usage)
--[Feature](#feature)
--[Results](#results)
--[License](#license)
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Feature](#feature)
+- [Results](#results)
+- [License](#license)
 
 ## Introduction
 
@@ -51,3 +52,37 @@ Creating a tuned prediction model to determine the quality of wine based on the 
    -Model Evaluation based on the quality of fitting during data trianing
 
 ## Results
+
+   ### Baseline Model Performance
+   ---------------------------------------------------------------------------------
+   The following models were evaluated to establish baseline performance:
+   
+   -Logistic Regression: Achieved an accuracy of 56.3% with a Cohen Kappa Score of 0.45 and a Logloss of 1.038.
+   -SVC (Support Vector Classifier): Showed an accuracy of 55.5%, with a Cohen Kappa Score of 0.46 and Logloss of 1.036.
+   -Random Forest Classifier: Had the highest accuracy at 59.2%, a Cohen Kappa Score of 0.55, and Logloss of 1.117.
+   -XGB Classifier: Delivered an accuracy of 56.9%, with a Cohen Kappa Score of 0.53 and a Logloss of 1.194.
+   -LGB Classifier: Reported an accuracy of 57.8%, Cohen Kappa Score of 0.51, and Logloss of 1.238.
+   -Oversampling (os), undersampling (us), and combined methods (os_us) were applied to various models, showing generally lower performance compared to the 
+    baseline models.
+   
+   ###Feature Impact Analysis
+   ---------------------------------------------------------------------------------
+   Analysis was conducted to evaluate the impact of removing specific features:
+   
+   Fixed Acidity: Removal led to a decrease in performance across all models, particularly affecting Random Forest and LGB models.
+   Volatile Acidity: Generally had a negative impact, with notable reductions in accuracy and increases in Logloss.
+   Citric Acid: Removing this feature tended to decrease performance in Random Forest and XGB models.
+   Residual Sugar: Results varied, with some models performing better without this feature.
+   Chlorides, Free Sulfur Dioxide, Total Sulfur Dioxide: Removal of these features showed mixed effects, with some models benefiting while others experienced 
+   reduced performance.
+   
+   ### Principal Component Analysis (PCA) Results
+   ---------------------------------------------------------------------------------
+   PCA was used to analyze the impact of dimensionality reduction on model performance:
+   
+   Top Features: Models with 'Fixed Acidity', 'Volatile Acidity', and 'Total Sulfur Dioxide' showed varying results. Removing certain combinations resulted in 
+   improved performance metrics for Random Forest, XGB, and LGB classifiers.
+
+## License
+
+   This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
