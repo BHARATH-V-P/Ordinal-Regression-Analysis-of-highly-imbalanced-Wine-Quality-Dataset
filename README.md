@@ -65,7 +65,7 @@ Creating a tuned prediction model to determine the quality of wine based on the 
    - Oversampling (os), undersampling (us), and combined methods (os_us) were applied to various models, showing generally lower performance compared to the 
      baseline models.
    
-   ###Feature Impact Analysis
+   ### Feature Impact Analysis
    ---------------------------------------------------------------------------------
    Analysis was conducted to evaluate the impact of removing specific features:
    
