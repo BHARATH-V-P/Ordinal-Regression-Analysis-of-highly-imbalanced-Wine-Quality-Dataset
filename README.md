@@ -29,7 +29,7 @@ Creating a tuned prediction model to determine the quality of wine based on the 
 ## Usage
 1. Prepare your dataset: Place your datasets in the data/ directory. Ensure it is named WineQT ----------ordinal regression.csv, wine_train.csv and
    wine_test.csv or adjust the script accordingly.
-3. Open the Jupyter Notebook: jupyter notebook "WINE_ORDINAL_REG.ipynb"
+3. Open the Jupyter Notebook: jupyter notebook "WINE_ORDINAL_REG_final.ipynb"
    The script will:
    -Preprocess the raw data
    -Perform relevant EDA to compensate for the absence of minimum variabaility pretaining to certain classes and the heavy imabalance observed in the dataset.
