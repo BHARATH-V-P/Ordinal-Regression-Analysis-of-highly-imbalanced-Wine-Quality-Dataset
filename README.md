@@ -31,13 +31,13 @@ Creating a tuned prediction model to determine the quality of wine based on the 
    wine_test.csv or adjust the script accordingly.
 3. Open the Jupyter Notebook: jupyter notebook "WINE_ORDINAL_REG_final.ipynb"
    The script will:
-   -Preprocess the raw data
-   -Perform relevant EDA to compensate for the absence of minimum variabaility pretaining to certain classes and the heavy imabalance observed in the dataset.
-   -Train and evaluate models
-   -Perform neccessary feature engineering and feature seleciton using RFECV
-   -Perform Hyperparameter tuning to try and improve model performance
-   -Prioritize feature  importance for individual models
-   -Keep track of specific KPI metrics such as precision_recall curve and rov_curves to understand model behavior for specific preprocessed datasets
+   - Preprocess the raw data
+   - Perform relevant EDA to compensate for the absence of minimum variabaility pretaining to certain classes and the heavy imabalance observed in the dataset.
+   - Train and evaluate models
+   - Perform neccessary feature engineering and feature seleciton using RFECV
+   - Perform Hyperparameter tuning to try and improve model performance
+   - Prioritize feature  importance for individual models
+   - Keep track of specific KPI metrics such as precision_recall curve and rov_curves to understand model behavior for specific preprocessed datasets
 5. Review the results:
    Evaluation Metrics: Found in results/evaluation_metrics.txt
    Predictions: Found in results/predictions.csv
@@ -50,6 +50,7 @@ Creating a tuned prediction model to determine the quality of wine based on the 
    - Model Training: Utilizes Logistic Regression, Random Forest Classification, XGBoost , and LGB.
    - Create custom metrics to aid better results from Bayesian Optimization
    - Model Evaluation based on the quality of fitting during data trianing
+   - Develop a Voting Classifier to improve overall predictability.
 
 ## Results
 
@@ -82,7 +83,22 @@ Creating a tuned prediction model to determine the quality of wine based on the 
    
    - Top Features: Models with 'Fixed Acidity', 'Volatile Acidity', and 'Total Sulfur Dioxide' showed varying results. Removing certain combinations resulted in 
      improved performance metrics for Random Forest, XGB, and LGB classifiers.
-
+     
+   ### Evaluation Metrics for LGB Model- Hyperparameter Tuned
+   ---------------------------------------------------------------------------------
+   
+   - Performance of the LGB model with different tuning methods:
+   
+      - Bayesian Hyperopt (Original Dataset): Accuracy: 0.583, Cohen Kappa: 0.534, Log Loss: 1.507
+      - Optuna (Cross-Validation): Accuracy: 0.589, Cohen Kappa: 0.530, Log Loss: 1.259
+      - Bayesian Hyperopt (Oversampled Dataset): Accuracy: 0.841, Cohen Kappa: 0.953, Log Loss: 0.462
+        
+   ### Voting Classifier Evaluation
+   ---------------------------------------------------------------------------------
+   - Hard Voting: Accuracy: 0.588, Cohen Kappa: 0.560
+   - Soft Voting: Accuracy: 0.589, Cohen Kappa: 0.562
+   - Soft Voting with Weights (Best Model): Accuracy: 0.595, Cohen Kappa: 0.568
+     
 ## License
 
    This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
